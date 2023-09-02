@@ -18,8 +18,12 @@
     $tool_uuid = $_POST['tool_uuid'];
 
     if ($tool_uuid != null) {
-      $queryString = "DELETE FROM tbl_tool WHERE tool_uuid = " . $tool_uuid . ";";
-      mysqli_query($connection, $queryString);
+
+      // Delete the tool AND all of its links
+      $queryString = "DELETE FROM tbl_links WHERE tool_uuid = " . $tool_uuid . "; ";
+      $queryString .= "DELETE FROM tbl_tool WHERE tool_uuid = " . $tool_uuid . "; ";
+      mysqli_multi_query($connection, $queryString);
+
     }
 
 ?>
