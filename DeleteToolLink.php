@@ -15,11 +15,10 @@
         $_SERVER["DB_SCHEMA"]
     );
 
-    $tool_uuid = $_POST['tool_uuid'];
-    $link_url = $_POST['link_url'];
+    $link_id = $_POST['link_id'];
     
-    if ($tool_uuid != null && $link_url != null) {
-      $queryString = "DELETE FROM tbl_links WHERE tool_uuid = " . $tool_uuid . " AND link = '" . $link_url . "';";
+    if ($link_id != null) {
+      $queryString = "DELETE FROM tbl_links WHERE link_id = '" . $link_id . "';";
       mysqli_query($connection, $queryString);
     }
 

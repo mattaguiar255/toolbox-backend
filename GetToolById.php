@@ -28,6 +28,7 @@
             tbl_tool.short_desc,
             tbl_tool.docs_link,
             tbl_tool.long_desc,
+            GROUP_CONCAT(tbl_links.link_id) AS link_ids,
             GROUP_CONCAT(tbl_links.link_name) AS link_names,
             GROUP_CONCAT(tbl_links.link) AS links
         FROM tbl_tool
