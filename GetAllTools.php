@@ -28,7 +28,7 @@
           GROUP_CONCAT(tbl_links.link_name) AS link_names,
           GROUP_CONCAT(tbl_links.link) AS links
       FROM tbl_tool
-      INNER JOIN tbl_links ON tbl_tool.tool_uuid = tbl_links.tool_uuid
+      LEFT JOIN tbl_links ON tbl_tool.tool_uuid = tbl_links.tool_uuid
       GROUP BY 
           tbl_tool.tool_uuid,
           tbl_tool.icon_link,
