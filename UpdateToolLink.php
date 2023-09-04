@@ -19,7 +19,7 @@
     $column = $_POST['column'];
     $value = $_POST['value'];
     
-    if ($link_id != null && $column != null && $value != null) {
+    if ($link_id != null && $column != null) {
       $queryString = "
         UPDATE tbl_links SET "
         . $column .

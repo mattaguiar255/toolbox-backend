@@ -16,15 +16,7 @@
     );
 
     // Build the MySQL query string for retrieving all tools.
-    $queryString = "
-      INSERT INTO tbl_tool (icon_link, title, short_desc, docs_link, long_desc) VALUES (
-        '<Image URL>',
-        '<Title>',
-        '<Short Description>',
-        '<Reference Link>',
-        '<Long Description>'
-      );
-    ";
+    $queryString = "INSERT INTO tbl_tool (long_desc) VALUES ('');";
 
     // Execute the query
     $query = mysqli_query($connection, $queryString);

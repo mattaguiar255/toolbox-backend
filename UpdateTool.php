@@ -19,7 +19,7 @@
     $column = $_POST['column'];
     $value = $_POST['value'];
     
-    if ($tool_uuid != null && $column != null && $value != null) {
+    if ($tool_uuid != null && $column != null) {
       $queryString = "UPDATE tbl_tool SET " . $column . " = '" . $value . "' WHERE tool_uuid = " . $tool_uuid . ";";
       mysqli_query($connection, $queryString);
     }

@@ -18,10 +18,7 @@
     $tool_uuid = $_POST['tool_uuid'];
     
     if ($tool_uuid != null) {
-      $queryString = "INSERT INTO tbl_links (tool_uuid, link_name, link) VALUES (";
-      $queryString .= " " . $tool_uuid . ",";
-      $queryString .= " '<Link Name>', '<Link URL>'";
-      $queryString .= ");";
+      $queryString = "INSERT INTO tbl_links (tool_uuid) VALUES ('" . $tool_uuid . "');";
       mysqli_query($connection, $queryString);
     }
 
